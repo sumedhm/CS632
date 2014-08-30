@@ -388,7 +388,7 @@ int opac_error(char err[1000]){
 }
 
 void welcome(){
-	strcpy(response,"---------------------------------\nPlease enter command:\nTo search:\n\tTo search by name or author - search name 'search_string'\n\tTo search by id - search id 'book_id'\nTo add a book:\n\tTo add new - add new book_name\n\tTo add copy of existing book - add copy book_id\nTo reserve:\n\tbook book_id\nTo issue:\n\tissue book_id\nTo return: \n\treturn book_id copy_id\n---------------------------------\n");
+	strcpy(response,"---------------------------------\nPlease enter command:\nTo search:\n\tTo search by name or author - search name 'search_string'\n\tTo search by id - search id 'book_id'\nTo add a book:\n\tTo add new - add new book_name\n\tTo add copy of existing book - add copy book_id\nTo reserve:\n\tbook book_id\nTo issue:\n\tissue book_id\nTo return: \n\treturn book_id copy_id\nTo renew: \n\trenew book_id copy_id\n---------------------------------\n");
 	printf("\nResponse sent-\n%s\n", response);
 	return;
 }

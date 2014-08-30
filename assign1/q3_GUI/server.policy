@@ -1,0 +1,3 @@
+grant codeBase "file:/home/optimus/ds/assign1/q3_GUI/" {
+    permission java.security.AllPermission;
+};

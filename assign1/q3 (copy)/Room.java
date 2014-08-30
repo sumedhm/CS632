@@ -90,6 +90,18 @@ public class Room{
 		return (booked[day][slot]==null);
 	}
 
+	public void updateDate(){
+		for(int i=0;i<99;i++){
+			for(int j=0;j<48;j++){
+				booked[i][j] = booked[i+1][j];
+			}
+		}
+		for(int j=0;j<48;j++){
+				booked[99][j] = null;
+		}
+		return;
+	}
+
 	public String getTime(int slot){
 		int t = (slot-1)/2;
 		String time = new String("");

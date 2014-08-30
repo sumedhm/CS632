@@ -215,7 +215,7 @@ public class RoomBookingClient {
 
 					System.out.println("Enter slot number - ");
 					int slot = Integer.parseInt(br.readLine());
-					String response = comp.cancelBooking(sel,slot,date.compareTo(today),user);
+					String response = comp.cancelBooking(sel,slot,daysBetween(date,today),user);
 					if(response.equals("0")){
 						System.out.println("Successfully cancelled event!\n\n");
 					} else {

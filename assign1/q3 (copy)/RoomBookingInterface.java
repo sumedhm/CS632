@@ -4,6 +4,7 @@ public interface RoomBookingInterface extends Remote{
 
 	public String sayHello(String msg) throws RemoteException;
 	public void initializeRooms() throws RemoteException;
+	public void updateDate() throws RemoteException;
 	public String getAllRooms() throws RemoteException;
 	public String bookRoom(int id, int slot, int day, User user, String event, String desc) throws RemoteException;
 	public String cancelBooking(int id, int slot, int day, User user) throws RemoteException;

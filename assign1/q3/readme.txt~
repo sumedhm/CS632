@@ -1,0 +1,15 @@
+Different classes for User, Room.
+
+Users, Admins and Rooms are stored in arrays and lists without any database.
+
+User authentication
+Admin Panel 
+Room booking
+Search according to free slots, location, capacity
+View bookings b/w dates
+Cancel previous bookings
+
+Date validation at all points, user validation, etc.
+Cannot cancel other's/free slot.
+Cannot book already booked slot.
+

@@ -331,7 +331,8 @@ int return_book(int book_id, int copy_id){
 			if(flag){
 				strcpy(response, "Operation failed.. Invalid copy_id..\n");return 0;
 			}
-                	temp->left = temp->left+1;
+            temp->left = temp->left+1;
+            if(temp1==temp->issued_to) temp->issued_to=NULL;
 			temp2->next = temp1->next;
 			free(temp1);
 			strcpy(response, "Book has been returned successfully..\n");

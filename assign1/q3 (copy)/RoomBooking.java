@@ -2,6 +2,11 @@ import java.rmi.*;
 import java.rmi.server.*;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.*;
+import java.text.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.Timer;
+import java.lang.Thread;
 
 public class RoomBooking extends UnicastRemoteObject implements RoomBookingInterface{
 
@@ -14,6 +19,8 @@ public class RoomBooking extends UnicastRemoteObject implements RoomBookingInter
 	List<Room> allRooms = new ArrayList<Room>(); 
 
 	Users allUsers = new Users();
+
+	Timer timer;
 
 	/***
 	Test method
@@ -80,7 +87,52 @@ public class RoomBooking extends UnicastRemoteObject implements RoomBookingInter
 		for (Room room : allRooms){
         	System.out.println(room.getName());
     	}
+    	
+    	Date now = new Date();
+    	DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+    	Date tomorrow = new Date(now.getTime() + (1000 * 60 * 60 * 24));
+    	String dt = dateFormat.format(tomorrow);
+    	try{
+	    	tomorrow = dateFormat.parse(dt);
+	    } catch(Exception e){}
+    	int time = (int)(tomorrow.getTime() - now.getTime());
 
+		timer = new Timer(time, new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				Thread t = new Thread(new Runnable() {
+		         public void run()
+			         {
+						updateDate();
+			         }
+				});
+			}
+		});
+		timer.setRepeats(false); // Only execute once
+		timer.start(); // Go go go!
+		System.out.println("Thread set to update data");
+	
+		return;
+	}
+
+	public void updateDate(){
+		for(Room room : allRooms){
+			room.updateDate();
+		}
+		int time = 24*60*60*1000;
+		timer = new Timer(time, new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				Thread t = new Thread(new Runnable() {
+		         public void run()
+			         {
+						updateDate();
+			         }
+				});
+			}
+		});
+		timer.setRepeats(false); // Only execute once
+		timer.start(); // Go go go!
 		return;
 	}
 
