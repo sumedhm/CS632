@@ -405,7 +405,7 @@ int main(int argc, char *argv[])
     }
     
     bzero((char *) &serv_addr, sizeof(serv_addr));
-    portno = 5001;
+    portno = 5020;
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_addr.s_addr = inet_addr("127.0.0.1");
     serv_addr.sin_port = htons(portno);

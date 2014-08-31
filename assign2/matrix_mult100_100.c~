@@ -68,7 +68,7 @@ int main(int argc, char **argv){
     start = MPI_Wtime();
 	if(myrank==0){
 		
-		int m1=100;
+		int m1=1500;
 		int n1=m1, m2=m1, n2=m1;
 		//scanf(" %d %d %d %d", &m1, &n1, &m2, &n2);
 		size = max(max(m1,n1),max(m2,n2));

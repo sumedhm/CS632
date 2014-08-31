@@ -4,5 +4,5 @@ reset
 javac RoomBookingInterface.java RoomBooking.java User.java Users.java Room.java
 javac RoomBookingServer.java RoomBookingClient.java ServeClient.java
 rmic RoomBooking
-#rmiregistry &
+rmiregistry &
 java -Djava.security.policy=server.policy RoomBookingServer &
