@@ -1,0 +1,29 @@
+#include<stdio.h>
+int main(){
+printf("hello there\n");
+printf("i was online\n");
+printf("i was online again\n");
+printf("checking disconnection\n");
+just another test;
+}
+making a video for report;
+???#include<stdio.h>
+int main(){
+printf("hello there\n");
+printf("i was online\n");
+printf("i was online again\n");
+printf("checking disconnection\n");
+just another test;
+}
+making a video for report;
+checking again;
+??????#include<stdio.h>
+int main(){
+printf("hello there\n");
+printf("i was online\n");
+printf("i was online again\n");
+printf("checking disconnection\n");
+just another test;
+}
+connected to server leader
+???

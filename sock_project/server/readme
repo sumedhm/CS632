@@ -1,0 +1,36 @@
+Files-
+  - server.c		//Code to run server.
+  - clean.sh		//Clean everything.
+  - startServer.sh	//Start server again after cleaning.
+
+
+Setting up a server
+------------------------------------------
+Create a ftp server first.
+
+$ sudo apt-get install vsftpd
+
+Edit /etc/vsftpd.conf file, and set anonymous_enable to YES
+
+Restart ftp,
+
+$ sudo restart vsftpd
+
+Go to directory where server.c is,
+$ mkdir ftp					//create new dir ftp
+$ sudo usermod -d /path/to/ftp/dir ftp		//Make this default ftp dir.
+$ mkdir ftp/codafs				//Put all files in folder named codafs
+
+Put all files on server in ftp/codafs folder.
+
+Run ./clean.sh to clean everthing. All logs, clients data, servers data etc.
+Run ./startServer.sh after clean, so that all folders are created again.
+
+If you do not run clean.sh, just compile server.c and run as follows.
+
+gcc -o coda_server -pthread server.c
+./coda_server
+
+Then, you can connect with server from client.
+
+

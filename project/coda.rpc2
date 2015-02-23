@@ -1,0 +1,12 @@
+/*
+coda.rpc2
+*/
+server prefix "VICE";
+client prefix "VENUS";
+
+Subsystem "coda";
+
+#define CODAPORTNO 5000
+#define CODASUBSYSID 100
+#define RPC2_SUBSYSID 1001
+GetMsg(OUT RPC2_Integer arg);
